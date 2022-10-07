@@ -69,18 +69,18 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/jenkins-x/jx-updatebot:0.3.3'
-  entrypoint: >
-    jx-updatebot pr \
-    --version '${{ inputs.version }}' \
-    --pull-request-title '${{ inputs.pull-request-title }}' \
-    --pull-request-body '${{ inputs.pull-request-body }}' \
-    --commit-title '${{ inputs.commit-title }}' \
-    --commit-message '${{ inputs.commit-message }}' \
-    --labels '${{ inputs.labels }}' \
-    --base-branch-name '${{ inputs.base-branch-name }}' \
-    --config-file '${{ inputs.config-file }}' \
-    --version-file '${{ inputs.version-file }}' \
-    --dir '${{ inputs.dir }}' \
+  entrypoint: |
+    jx-updatebot pr
+    --version '${{ inputs.version }}' 
+    --pull-request-title '${{ inputs.pull-request-title }}'
+    --pull-request-body '${{ inputs.pull-request-body }}'
+    --commit-title '${{ inputs.commit-title }}'
+    --commit-message '${{ inputs.commit-message }}'
+    --labels '${{ inputs.labels }}'
+    --base-branch-name '${{ inputs.base-branch-name }}'
+    --config-file '${{ inputs.config-file }}'
+    --version-file '${{ inputs.version-file }}'
+    --dir '${{ inputs.dir }}'
     ${{ inputs.flags }}
   env:
     GIT_USERNAME: ${{ inputs.git-username }}
