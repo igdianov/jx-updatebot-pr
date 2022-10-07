@@ -9,7 +9,7 @@ branding:
 inputs:
   auto-merge:
     required: false
-    description: shoul we automatically merge if the PR pipeline is green (default true) 
+    description: should we automatically merge if the PR pipeline is green (default true) 
     default: 'true'
   version:
     required: true
