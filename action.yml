@@ -69,8 +69,9 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/jenkins-x/jx-updatebot:0.3.3'
-  entrypoint: sh -c
+  entrypoint: /bin/sh
   args: 
+    - -c
     - >
       jx-updatebot pr
       --version '${{ inputs.version }}'
