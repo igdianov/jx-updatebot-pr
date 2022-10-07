@@ -25,11 +25,11 @@ inputs:
   pull-request-title:
     required: false
     description: the PR title
-    default: 'promote(dep): update ${{ github.repository }} versions from ${{ github.ref_name }}'
+    default: ''
   commit-title:
     required: false
     description: the commit title
-    default: 'chore(dep): update ${{ github.repository }} version to ${{ inputs.version }}'
+    default: ''
   commit-message:
     required: false
     description: the commit message
