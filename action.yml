@@ -68,7 +68,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/jenkins-x/jx-updatebot-pr:0.3.3'
+  image: 'docker://ghcr.io/jenkins-x/jx-updatebot:0.3.3'
   args:
     - pr
     - --version '${{ inputs.version }}'
