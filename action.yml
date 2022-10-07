@@ -66,12 +66,16 @@ inputs:
     description: the user email to git commit
     required: false
     default: ''
+  jx-updatebot-release:
+    description: the version of jx-updatebot release
+    required: false
+    default: '0.3.3'    
 runs:
   using: composite
   steps:
     - name: Setup jx-updatebot
       run: |
-        curl -L https://github.com/jenkins-x-plugins/jx-updatebot/releases/download/v0.3.3/jx-updatebot-linux-amd64.tar.gz | tar xzv  
+        curl -L https://github.com/jenkins-x-plugins/jx-updatebot/releases/download/v${{ inputs.jx-updatebot-release }}/jx-updatebot-linux-amd64.tar.gz | tar xzv  
         sudo mv jx-updatebot /usr/local/bin
       shell: bash
       working-directory: /tmp
