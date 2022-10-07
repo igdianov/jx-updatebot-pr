@@ -86,9 +86,10 @@ runs:
         --version-file '${{ inputs.version-file }}'
         --dir '${{ inputs.dir }}'
         ${{ inputs.flags }}
-      shell: bash  
+      shell: bash
+      working-directory: .
       env:
         GIT_USERNAME: ${{ inputs.git-username }}
-        GIT_TOKEN: ${{ inputs.github-token }}
+        GIT_TOKEN: ${{ inputs.git-token }}
         GIT_AUTHOR_NAME: ${{ inputs.git-user-name }}
         GIT_AUTHOR_EMAIL: ${{ inputs.git-user-email }}
