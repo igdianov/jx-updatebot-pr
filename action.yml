@@ -69,11 +69,14 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: |
+    - name: Setup jx-updatebot
+      run: |
         curl -L https://github.com/jenkins-x-plugins/jx-updatebot/releases/download/v0.3.3/jx-updatebot-linux-amd64.tar.gz | tar xzv  
         sudo mv jx-updatebot /usr/local/bin
-      shell: bash  
-    - run: >
+      shell: bash
+      working-directory: /tmp
+    - name: Run jx-updatebot
+      run: >
         jx-updatebot pr
         --version '${{ inputs.version }}'
         --pull-request-title '${{ inputs.pull-request-title }}'
