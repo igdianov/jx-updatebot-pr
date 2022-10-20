@@ -103,5 +103,5 @@ runs:
       env:
         GIT_USERNAME: ${{ inputs.git-username }}
         GIT_TOKEN: ${{ inputs.git-token }}
-        GIT_AUTHOR_NAME: ${{ inputs.git-author-name }}
+        GIT_AUTHOR_NAME: ${{ inputs.git-author-name || inputs.git-username }}
         GIT_AUTHOR_EMAIL: ${{ inputs.git-author-email }}
